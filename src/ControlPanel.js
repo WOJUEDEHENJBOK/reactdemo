@@ -9,15 +9,15 @@ const style = {
 
 class ControlPanel extends Component {
 
-  constructor(props) {
+  constructor(props) { //构造函数 props是对外的状态
     super(props);
 
     this.onCounterUpdate = this.onCounterUpdate.bind(this);
 
-    this.initValues = [ 0, 10, 20];
+    this.initValues = [ 0, 10, 20]; 
 
     const initSum = this.initValues.reduce((a, b) => a+b, 0);
-    this.state = {
+    this.state = { // 定义state state是对内的状态
       sum: initSum
     };
   }
@@ -27,7 +27,7 @@ class ControlPanel extends Component {
     this.setState({ sum: this.state.sum + valueChange});
   }
 
-  render() {
+  render() { 
     return (
       <div style={style}>
         <Counter onUpdate={this.onCounterUpdate} caption="First" />
